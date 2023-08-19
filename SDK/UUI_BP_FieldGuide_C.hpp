@@ -1,0 +1,196 @@
+#pragma once
+#include <cstdint>
+#include "EFieldGuideExitReasons.hpp"
+#include "EInputDeviceUsed.hpp"
+#include "EInputEvent.hpp"
+#include "ENotificationCategory.hpp"
+#include "EPauseMenuPage.hpp"
+#include "ESlateVisibility.hpp"
+#include "EUMGInputAction.hpp"
+#include "FFormatArgumentData.hpp"
+#include "FLegendItemData.hpp"
+#include "FPointerToUberGraphFrame.hpp"
+#include "UFieldGuideMenu.hpp"
+class UWidgetAnimation;
+class UCanvasPanel;
+class UUI_BP_NavBarButton_C;
+class UUI_BP_AsyncLoadWrapper_C;
+class UImage;
+class UPhoenixUserWidget;
+class UButton;
+class ULegendItem;
+class UUI_BP_FG_Index_C;
+class UAsyncWidgetSwitcher;
+class UUI_BP_Legend_Horizontal_Screen_C;
+class UHorizontalBox;
+class UTutorialSystem;
+class UUIManager;
+class UWidget;
+class UAsyncLoadWrapper;
+class UUI_BP_FG_InventoryScreen_C;
+class UUI_BP_FG_SettingsScreen_C;
+class USystemMenuWidget;
+class UMapSubSystem;
+class UUMGSequencePlayer;
+class UTabPageWidget;
+class ABiped_Player;
+class UUserWidget;
+class UObject;
+#pragma pack(push, 1)
+class UUI_BP_FieldGuide_C : public UFieldGuideMenu {
+public:
+    FPointerToUberGraphFrame UberGraphFrame; // 0x378
+    UWidgetAnimation* fadeScrim; // 0x380
+    UUI_BP_AsyncLoadWrapper_C* Async_FG_Actions; // 0x388
+    UUI_BP_AsyncLoadWrapper_C* Async_FG_Collections; // 0x390
+    UUI_BP_AsyncLoadWrapper_C* Async_FG_Gear; // 0x398
+    UUI_BP_AsyncLoadWrapper_C* Async_FG_Inventory; // 0x3a0
+    UUI_BP_AsyncLoadWrapper_C* Async_FG_Map; // 0x3a8
+    UUI_BP_AsyncLoadWrapper_C* Async_FG_OwlMail; // 0x3b0
+    UUI_BP_AsyncLoadWrapper_C* Async_FG_Quests; // 0x3b8
+    UUI_BP_AsyncLoadWrapper_C* Async_FG_Settings; // 0x3c0
+    UUI_BP_AsyncLoadWrapper_C* Async_FG_Talents; // 0x3c8
+    UImage* backgroundDim; // 0x3d0
+    UImage* backgroundHide; // 0x3d8
+    UUI_BP_NavBarButton_C* btn_Actions; // 0x3e0
+    UUI_BP_NavBarButton_C* btn_Character; // 0x3e8
+    UUI_BP_NavBarButton_C* btn_Collections; // 0x3f0
+    UUI_BP_NavBarButton_C* btn_Inventory; // 0x3f8
+    UUI_BP_NavBarButton_C* btn_Mail; // 0x400
+    UUI_BP_NavBarButton_C* btn_Map; // 0x408
+    UUI_BP_NavBarButton_C* btn_Missions; // 0x410
+    UUI_BP_NavBarButton_C* btn_Settings; // 0x418
+    UUI_BP_NavBarButton_C* btn_Talents; // 0x420
+    UUI_BP_FG_Index_C* FG_IndexPage; // 0x428
+    UButton* HiddenButtonForHoverEvents; // 0x430
+    UUI_BP_Legend_Horizontal_Screen_C* Legend; // 0x438
+    UAsyncWidgetSwitcher* MenuWidgetSwitcher; // 0x440
+    UCanvasPanel* navBar; // 0x448
+    UHorizontalBox* NavBarContainer; // 0x450
+    UButton* NavBarLeftButton; // 0x458
+    UButton* NavBarRightButton; // 0x460
+    bool HiddenButtonHovered; // 0x468
+    char pad_469[0x57];
+    UUI_BP_NavBarButton_C* SelectedNavBarButton; // 0x4c0
+    float DisplayPageDelay; // 0x4c8
+    char pad_4cc[0x54];
+    bool LockedToPage; // 0x520
+    char pad_521[0x7];
+    TArray<FString> DestPagePath; // 0x528
+    char pad_538[0x50];
+    UUI_BP_AsyncLoadWrapper_C* NewPage; // 0x588
+    bool isScrimShowing; // 0x590
+    char pad_591[0x57];
+    bool InMenuTransition; // 0x5e8
+    char pad_5e9[0x3];
+    int32_t CurrentTabIndex; // 0x5ec
+    TArray<ENotificationCategory> NotificationCategories; // 0x5f0
+    bool InMapTransition; // 0x600
+    char pad_601[0x7];
+    static UUI_BP_FieldGuide_C* StaticClass();
+    void TerminateLingeringTutorials(UTutorialSystem* CallFunc_Get_ReturnValue, bool CallFunc_ForceCompleteTutorial_ReturnValue, bool CallFunc_ForceCompleteTutorial_ReturnValue_1, bool CallFunc_ForceCompleteTutorial_ReturnValue_2, bool CallFunc_ForceCompleteTutorial_ReturnValue_3, bool CallFunc_ForceCompleteTutorial_ReturnValue_4);
+    void DoesTutorialPreventExitingPauseMenu(bool& Prevented, UTutorialSystem* CallFunc_Get_ReturnValue, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue);
+    void DoesTutorialPreventBackingOut(bool& Prevented, UTutorialSystem* CallFunc_Get_ReturnValue, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue);
+    TArray<FString> GatherMenuReaderStrings(int32_t DepthLevel, TArray<FString> TempGatheredStrings, TArray<FString>& CallFunc_GatherMenuReaderStrings_ReturnValue, TArray<FString>& CallFunc_GatherMenuReaderStrings_ReturnValue_1);
+    void GetPageIndex(UWidget* PageWidget, int32_t& Index, int32_t OutIndex, bool CallFunc_IsValid_ReturnValue, bool Temp_bool_True_if_break_was_hit_Variable, bool CallFunc_Not_PreBool_ReturnValue, int32_t Temp_int_Array_Index_Variable, int32_t Temp_int_Loop_Counter_Variable, int32_t CallFunc_Add_IntInt_ReturnValue, TArray<UWidget*>& CallFunc_GetAllChildren_ReturnValue, int32_t CallFunc_Array_Length_ReturnValue, UWidget* CallFunc_Array_Get_Item, bool CallFunc_Less_IntInt_ReturnValue, bool CallFunc_EqualEqual_ObjectObject_ReturnValue, bool CallFunc_BooleanAND_ReturnValue, UAsyncLoadWrapper* K2Node_DynamicCast_AsAsync_Load_Wrapper, bool K2Node_DynamicCast_bSuccess, bool CallFunc_EqualEqual_ObjectObject_ReturnValue_1);
+    void IsInspectableShown(bool& IsShown, UWidget* CallFunc_GetActiveWidget_ReturnValue, UUI_BP_FG_InventoryScreen_C* K2Node_DynamicCast_AsUI_BP_FG_Inventory_Screen, bool K2Node_DynamicCast_bSuccess, bool CallFunc_EqualEqual_ObjectObject_ReturnValue);
+    void HandleNavigateNavBarRight(bool CallFunc_ShouldSkipPage_ShouldSkip, bool K2Node_SwitchInteger_CmpSuccess);
+    void HandleNavigateNavBarLeft(bool CallFunc_ShouldSkipPage_ShouldSkip, bool K2Node_SwitchInteger_CmpSuccess);
+    void IsGraphicsChangeConfirmPopupShown(bool& IsShown, UWidget* CallFunc_GetActiveWidget_ReturnValue, UUI_BP_FG_SettingsScreen_C* K2Node_DynamicCast_AsUI_BP_FG_Settings_Screen, bool K2Node_DynamicCast_bSuccess, bool CallFunc_EqualEqual_ObjectObject_ReturnValue);
+    void HandleHotkeyPressedForNavButton(UUI_BP_NavBarButton_C* NavBarButton, bool CallFunc_HandleNavBarClicked_Handled, UUI_BP_AsyncLoadWrapper_C* CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue, bool CallFunc_EqualEqual_IntInt_ReturnValue, EPauseMenuPage CallFunc_Map_Find_Value_1, bool CallFunc_Map_Find_ReturnValue_1, bool K2Node_SwitchEnum_CmpSuccess, bool CallFunc_ShouldSkipPage_ShouldSkip);
+    void ConditionallyHandleSettingsConfirm(EUMGInputAction InputAction, EInputEvent InputEvent, bool& Handled, USystemMenuWidget* K2Node_DynamicCast_AsSystem_Menu_Widget, bool K2Node_DynamicCast_bSuccess, FString CallFunc_SettingsNeedExitConfirmed_OutConfirmTitle, FString CallFunc_SettingsNeedExitConfirmed_OutConfirmDesc, bool CallFunc_SettingsNeedExitConfirmed_ReturnValue, UWidget* CallFunc_GetActiveWidget_ReturnValue, bool CallFunc_EqualEqual_ObjectObject_ReturnValue);
+    void ShouldSkipPage(UUI_BP_AsyncLoadWrapper_C* MenuPage, bool& ShouldSkip, bool CallFunc_EqualEqual_ObjectObject_ReturnValue, EPauseMenuPage CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue, UUIManager* CallFunc_GetUIManagerPure_ReturnValue, UMapSubSystem* CallFunc_GetMapSubSystem_ReturnValue, bool CallFunc_IsMenuTabHidden_ReturnValue, bool CallFunc_IsDungeon_ReturnValue, bool CallFunc_BooleanAND_ReturnValue, bool CallFunc_BooleanOR_ReturnValue);
+    void HandleDisabledTabs(TArray<EPauseMenuPage> TempDisabledTabs, int32_t Temp_int_Array_Index_Variable, int32_t Temp_int_Loop_Counter_Variable, int32_t CallFunc_Add_IntInt_ReturnValue, EPauseMenuPage Temp_byte_Variable, EPauseMenuPage Temp_byte_Variable_1, EPauseMenuPage CallFunc_Array_Get_Item, int32_t CallFunc_Array_AddUnique_ReturnValue, int32_t CallFunc_Array_Length_ReturnValue, UUIManager* CallFunc_Get_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, UMapSubSystem* CallFunc_GetMapSubSystem_ReturnValue, bool CallFunc_IsDungeon_ReturnValue, UUIManager* CallFunc_GetUIManagerPure_ReturnValue, UUI_BP_NavBarButton_C* K2Node_Select_Default, TArray<EPauseMenuPage>& CallFunc_GetHiddenMenuTabs_ReturnValue);
+    void HandleNewTabRequested(EPauseMenuPage NewPage, TArray<FString>& DestPath, EPauseMenuPage Temp_byte_Variable, UUI_BP_NavBarButton_C* K2Node_Select_Default, bool CallFunc_HandleNavBarClicked_Handled, bool CallFunc_IsValid_ReturnValue);
+    void HideBackgroundScrim(UUMGSequencePlayer* CallFunc_PlayAnimationReverse_ReturnValue);
+    void ShowBackgroundScrim(UUMGSequencePlayer* CallFunc_PlayAnimationForward_ReturnValue);
+    void Close_Field_Guide_Requested(UTutorialSystem* CallFunc_Get_ReturnValue, bool CallFunc_ForceCompleteTutorial_ReturnValue, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue, bool CallFunc_CanExit_CanExit, bool CallFunc_EqualEqual_IntInt_ReturnValue, int32_t CallFunc_PostEventAtLocation_ReturnValue);
+    void ExitMenuRequestedDelegate(UTutorialSystem* CallFunc_Get_ReturnValue, bool CallFunc_CanExit_CanExit, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_1, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_2, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_3, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_4, bool CallFunc_IsTutorialStepActiveOrAboutToBe_ReturnValue, int32_t CallFunc_PostEventAtLocation_ReturnValue);
+    void StartNewPage(FLegendItemData K2Node_MakeStruct_LegendItemData, TArray<FLegendItemData>& K2Node_MakeArray_Array, UUI_BP_NavBarButton_C* CallFunc_FindNavButtonFromMenu_Button, FString CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue, bool CallFunc_IsValid_ReturnValue);
+    void PageOutroFinished(UPhoenixUserWidget* PhoenixUserWidget, int32_t IntParam, bool CallFunc_EqualEqual_IntInt_ReturnValue, UTabPageWidget* K2Node_DynamicCast_AsTab_Page_Widget, bool K2Node_DynamicCast_bSuccess);
+    void OutroFinishedWhenLockedToPage(UPhoenixUserWidget* PhoenixUserWidget, int32_t IntParam, UTabPageWidget* K2Node_DynamicCast_AsTab_Page_Widget, bool K2Node_DynamicCast_bSuccess);
+    void CanExit(bool& CanExit, ABiped_Player* CallFunc_GetTheBipedPlayer_ReturnValue, bool CallFunc_GetContextOnActor_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue);
+    void HandleBackup(UUIManager* CallFunc_GetUIManagerPure_ReturnValue, int32_t CallFunc_SelectInt_ReturnValue, bool CallFunc_EqualEqual_IntInt_ReturnValue, UUIManager* CallFunc_GetUIManagerPure_ReturnValue_1, UUIManager* CallFunc_GetUIManagerPure_ReturnValue_2, UTutorialSystem* CallFunc_Get_ReturnValue, bool CallFunc_GetToMapFromBackButton_ReturnValue, bool CallFunc_ForceCompleteTutorial_ReturnValue, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue, bool CallFunc_ForceCompleteTutorial_ReturnValue_1, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_1);
+    void ExitPauseMenu(bool SkipFade, EFieldGuideExitReasons ExitReason, UUIManager* CallFunc_GetUIManagerPure_ReturnValue, UTutorialSystem* CallFunc_Get_ReturnValue, UWidget* CallFunc_GetActiveWidget_ReturnValue, bool CallFunc_ForceCompleteTutorial_ReturnValue, UUI_BP_AsyncLoadWrapper_C* K2Node_DynamicCast_AsUI_BP_Async_Load_Wrapper, bool K2Node_DynamicCast_bSuccess, bool CallFunc_IsTutorialStepActiveOrAboutToBe_ReturnValue, UTabPageWidget* K2Node_DynamicCast_AsTab_Page_Widget, bool K2Node_DynamicCast_bSuccess_1, bool CallFunc_IsTutorialStepActiveOrAboutToBe_ReturnValue_1, bool CallFunc_IsTutorialStepActiveOrAboutToBe_ReturnValue_2, bool CallFunc_IsTutorialStepActiveOrAboutToBe_ReturnValue_3, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_1, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_2, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_3, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_4, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_5, bool CallFunc_IsTutorialStepActiveOrAboutToBe_ReturnValue_4, bool CallFunc_IsTutorialStepActiveOrAboutToBe_ReturnValue_5, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_6, bool CallFunc_AutoSaveGameData_ReturnValue, UUIManager* CallFunc_Get_ReturnValue_1, UMapSubSystem* CallFunc_GetMapSubSystem_ReturnValue);
+    void SetLockedToPage(bool Locked, bool Temp_bool_Variable, ESlateVisibility Temp_byte_Variable, ESlateVisibility Temp_byte_Variable_1, ESlateVisibility K2Node_Select_Default);
+    void GenerateNavLookupMaps(EPauseMenuPage Temp_byte_Variable, EPauseMenuPage Temp_byte_Variable_1, EPauseMenuPage Temp_byte_Variable_2, EPauseMenuPage Temp_byte_Variable_3, EPauseMenuPage Temp_byte_Variable_4, FString Temp_string_Variable, FString Temp_string_Variable_1, FString Temp_string_Variable_2, FString Temp_string_Variable_3, FString Temp_string_Variable_4, FString Temp_string_Variable_5, FString Temp_string_Variable_6, FString Temp_string_Variable_7, FString Temp_string_Variable_8, FString Temp_string_Variable_9, FString Temp_string_Variable_10, FString Temp_string_Variable_11, FString Temp_string_Variable_12, FString Temp_string_Variable_13, FString Temp_string_Variable_14, FString Temp_string_Variable_15, FString Temp_string_Variable_16, FString Temp_string_Variable_17, EPauseMenuPage Temp_byte_Variable_5, EPauseMenuPage Temp_byte_Variable_6, EPauseMenuPage Temp_byte_Variable_7, EPauseMenuPage Temp_byte_Variable_8);
+    void FieldGuide_StartOnPage(FString PageName, bool StartingOnIndex, FString CurrentPage, FString PagePath, FString PageRoot, ESlateVisibility Temp_byte_Variable, FString CallFunc_Split_LeftS, FString CallFunc_Split_RightS, bool CallFunc_Split_ReturnValue, TArray<FString>& CallFunc_ParseIntoArray_ReturnValue, bool Temp_bool_Variable, FString Temp_string_Variable, FString Temp_string_Variable_1, bool Temp_bool_Variable_1, FString Temp_string_Variable_2, ESlateVisibility Temp_byte_Variable_1, bool CallFunc_EqualEqual_StrStr_ReturnValue, bool Temp_bool_Variable_2, UUIManager* CallFunc_GetUIManagerPure_ReturnValue, ESlateVisibility K2Node_Select_Default, bool CallFunc_EqualEqual_StrStr_ReturnValue_1, FString K2Node_Select_Default_1, UUIManager* CallFunc_GetUIManagerPure_ReturnValue_1, bool CallFunc_EqualEqual_StrStr_ReturnValue_2, FString K2Node_Select_Default_2, UUI_BP_AsyncLoadWrapper_C* CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue, EPauseMenuPage CallFunc_Map_Find_Value_1, bool CallFunc_Map_Find_ReturnValue_1, bool CallFunc_IsMenuTabHidden_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue);
+    void FindNavButtonFromMenu(UAsyncLoadWrapper* Menu, UUI_BP_NavBarButton_C*& Button, int32_t Temp_int_Array_Index_Variable, int32_t Temp_int_Loop_Counter_Variable, int32_t CallFunc_Add_IntInt_ReturnValue, TArray<UUI_BP_NavBarButton_C*>& CallFunc_Map_Keys_Keys, int32_t CallFunc_Array_Length_ReturnValue, UUI_BP_NavBarButton_C* CallFunc_Array_Get_Item, bool CallFunc_Less_IntInt_ReturnValue, UUI_BP_AsyncLoadWrapper_C* CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue, bool CallFunc_EqualEqual_ObjectObject_ReturnValue);
+    void UpdateNavBar(UUI_BP_NavBarButton_C* Button, bool CallFunc_IsValid_ReturnValue, bool CallFunc_NotEqual_ObjectObject_ReturnValue);
+    void NextPage(int32_t CurrentIndex, UUIManager* CallFunc_GetUIManagerPure_ReturnValue, int32_t CallFunc_PostEventAtLocation_ReturnValue, int32_t CallFunc_Add_IntInt_ReturnValue, int32_t CallFunc_GetNumWidgets_ReturnValue, bool CallFunc_GreaterEqual_IntInt_ReturnValue, int32_t CallFunc_SelectInt_ReturnValue, UWidget* CallFunc_GetWidgetAtIndex_ReturnValue, UUI_BP_AsyncLoadWrapper_C* K2Node_DynamicCast_AsUI_BP_Async_Load_Wrapper, bool K2Node_DynamicCast_bSuccess, bool CallFunc_ShouldSkipPage_ShouldSkip);
+    void PrevPage(int32_t CurrentIndex, int32_t CallFunc_PostEventAtLocation_ReturnValue, UUIManager* CallFunc_GetUIManagerPure_ReturnValue, int32_t CallFunc_Subtract_IntInt_ReturnValue, bool CallFunc_LessEqual_IntInt_ReturnValue, int32_t CallFunc_GetNumWidgets_ReturnValue, int32_t CallFunc_Subtract_IntInt_ReturnValue_1, int32_t CallFunc_SelectInt_ReturnValue, UWidget* CallFunc_GetWidgetAtIndex_ReturnValue, UUI_BP_AsyncLoadWrapper_C* K2Node_DynamicCast_AsUI_BP_Async_Load_Wrapper, bool K2Node_DynamicCast_bSuccess, bool CallFunc_ShouldSkipPage_ShouldSkip);
+    void HandleNavBarClicked(UUI_BP_NavBarButton_C* NavBarButton, bool& Handled, UUI_BP_AsyncLoadWrapper_C* NewMenu, UUIManager* CallFunc_GetUIManagerPure_ReturnValue, UUIManager* CallFunc_GetUIManagerPure_ReturnValue_1, bool CallFunc_GetInMenuTransition_ReturnValue, UWidget* CallFunc_GetActiveWidget_ReturnValue, bool CallFunc_EqualEqual_ObjectObject_ReturnValue, bool CallFunc_EqualEqual_ObjectObject_ReturnValue_1, UWidget* CallFunc_GetActiveWidget_ReturnValue_1, bool CallFunc_EqualEqual_ObjectObject_ReturnValue_2, int32_t CallFunc_GetChildIndex_ReturnValue, bool CallFunc_Greater_IntInt_ReturnValue, int32_t CallFunc_SelectInt_ReturnValue, FString CallFunc_SelectString_ReturnValue, UUI_BP_AsyncLoadWrapper_C* CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue, bool CallFunc_EqualEqual_ObjectObject_ReturnValue_3, int32_t CallFunc_SelectInt_ReturnValue_1);
+    void ChangeActivePage(UUI_BP_AsyncLoadWrapper_C* NewPage, int32_t PrevTabIndex, UUI_BP_AsyncLoadWrapper_C* ActiveWidget, UTabPageWidget* K2Node_DynamicCast_AsTab_Page_Widget, bool K2Node_DynamicCast_bSuccess, bool CallFunc_IsCurrentTransitionAnIntro_ReturnValue, bool CallFunc_IsTransitionInProgress_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, bool CallFunc_BooleanOR_ReturnValue, int32_t CallFunc_GetPageIndex_Index, bool CallFunc_EqualEqual_IntInt_ReturnValue, bool CallFunc_EqualEqual_IntInt_ReturnValue_1, bool CallFunc_EqualEqual_IntInt_ReturnValue_2, bool CallFunc_BooleanOR_ReturnValue_1, bool CallFunc_BooleanOR_ReturnValue_2, UMapSubSystem* CallFunc_GetGameInstanceSubsystem_ReturnValue, UWidget* CallFunc_GetWidgetAtIndex_ReturnValue, bool CallFunc_IsValid_ReturnValue, FFormatArgumentData K2Node_MakeStruct_FormatArgumentData, UUI_BP_NavBarButton_C* CallFunc_FindNavButtonFromMenu_Button, FString CallFunc_GetDisplayName_ReturnValue);
+    void StartStopLegendFill(int32_t LegendIndex, bool ShouldStart, ULegendItem* CallFunc_GetLegendItem_ReturnValue);
+    void LegendHoldComplete(ULegendItem* LegendItem, bool HoldCompleted, UWidget* CallFunc_GetActiveWidget_ReturnValue, UUI_BP_AsyncLoadWrapper_C* K2Node_DynamicCast_AsUI_BP_Async_Load_Wrapper, bool K2Node_DynamicCast_bSuccess, UTabPageWidget* K2Node_DynamicCast_AsTab_Page_Widget, bool K2Node_DynamicCast_bSuccess_1);
+    void OnNewLegendRequested(TArray<FLegendItemData>& NewLegend);
+    void BindTabPageWidgetDelegates(UAsyncLoadWrapper* AsyncWrapper);
+    void SetLegend(TArray<FLegendItemData>& NewLegendData, int32_t Temp_int_Array_Index_Variable, int32_t CallFunc_Array_Length_ReturnValue, FLegendItemData CallFunc_Array_Get_Item, int32_t Temp_int_Loop_Counter_Variable, bool CallFunc_Less_IntInt_ReturnValue, int32_t CallFunc_Add_IntInt_ReturnValue);
+    bool BlueprintOnUMGInputAction(EUMGInputAction InputAction, EInputEvent InputEvent, bool HandledHoldOperation, UUIManager* CallFunc_GetUIManagerPure_ReturnValue, bool CallFunc_GetInMenuTransition_ReturnValue, bool CallFunc_BooleanOR_ReturnValue, UTutorialSystem* CallFunc_Get_ReturnValue, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_1, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_2, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_3, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_4, bool CallFunc_IsTutorialActiveOrAboutToBe_ReturnValue_5, int32_t Temp_int_Loop_Counter_Variable, bool CallFunc_BooleanOR_ReturnValue_1, int32_t CallFunc_Add_IntInt_ReturnValue, bool CallFunc_BooleanOR_ReturnValue_2, bool CallFunc_BooleanOR_ReturnValue_3, bool CallFunc_BooleanOR_ReturnValue_4, bool CallFunc_BooleanOR_ReturnValue_5, bool CallFunc_EqualEqual_IntInt_ReturnValue, bool CallFunc_EqualEqual_IntInt_ReturnValue_1, bool CallFunc_EqualEqual_IntInt_ReturnValue_2, int32_t Temp_int_Array_Index_Variable, bool CallFunc_EqualEqual_IntInt_ReturnValue_3, bool CallFunc_EqualEqual_IntInt_ReturnValue_4, bool CallFunc_EqualEqual_IntInt_ReturnValue_5, bool CallFunc_EqualEqual_IntInt_ReturnValue_6, bool CallFunc_EqualEqual_IntInt_ReturnValue_7, bool CallFunc_EqualEqual_IntInt_ReturnValue_8, bool CallFunc_EqualEqual_IntInt_ReturnValue_9, UUIManager* CallFunc_GetUIManagerPure_ReturnValue_1, UUIManager* CallFunc_GetUIManagerPure_ReturnValue_2, bool CallFunc_DoesTutorialPreventBackingOut_Prevented, bool CallFunc_EqualEqual_ByteByte_ReturnValue, bool CallFunc_DoesTutorialPreventExitingPauseMenu_Prevented, bool CallFunc_EqualEqual_ByteByte_ReturnValue_1, UUIManager* CallFunc_GetUIManagerPure_ReturnValue_3, UUIManager* CallFunc_GetUIManagerPure_ReturnValue_4, bool CallFunc_GetInMenuTransition_ReturnValue_1, bool CallFunc_GetInMenuTransition_ReturnValue_2, bool CallFunc_BooleanOR_ReturnValue_6, bool CallFunc_GetInMenuTransition_ReturnValue_3, bool CallFunc_BooleanOR_ReturnValue_7, bool CallFunc_GetInMenuTransition_ReturnValue_4, bool CallFunc_ConditionallyHandleSettingsConfirm_Handled, bool CallFunc_Not_PreBool_ReturnValue, bool CallFunc_IsInspectableShown_IsShown, int32_t Temp_int_Array_Index_Variable_1, UUIManager* CallFunc_GetUIManagerPure_ReturnValue_5, EInputDeviceUsed CallFunc_GetLastUsedInputDevice_ReturnValue, bool CallFunc_IsGraphicsChangeConfirmPopupShown_IsShown, bool CallFunc_EqualEqual_ByteByte_ReturnValue_2, bool CallFunc_Not_PreBool_ReturnValue_1, bool CallFunc_IsGraphicsChangeConfirmPopupShown_IsShown_1, bool CallFunc_IsGraphicsChangeConfirmPopupShown_IsShown_2, bool CallFunc_Not_PreBool_ReturnValue_2, bool CallFunc_BooleanOR_ReturnValue_8, bool CallFunc_ConditionallyHandleSettingsConfirm_Handled_1, bool CallFunc_ConditionallyHandleSettingsConfirm_Handled_2, bool CallFunc_ConditionallyHandleSettingsConfirm_Handled_3, bool CallFunc_ConditionallyHandleSettingsConfirm_Handled_4, bool CallFunc_ConditionallyHandleSettingsConfirm_Handled_5, bool CallFunc_ConditionallyHandleSettingsConfirm_Handled_6, bool CallFunc_ConditionallyHandleSettingsConfirm_Handled_7, bool CallFunc_ConditionallyHandleSettingsConfirm_Handled_8, bool K2Node_SwitchEnum_CmpSuccess, bool CallFunc_Not_PreBool_ReturnValue_3, bool CallFunc_ConditionallyHandleSettingsConfirm_Handled_9, bool CallFunc_ConditionallyHandleSettingsConfirm_Handled_10, bool CallFunc_ConditionallyHandleSettingsConfirm_Handled_11, bool CallFunc_ConditionallyHandleSettingsConfirm_Handled_12, int32_t CallFunc_PostEventAtLocation_ReturnValue, bool CallFunc_EqualEqual_ByteByte_ReturnValue_3, UMapSubSystem* CallFunc_GetGameInstanceSubsystem_ReturnValue, UMapSubSystem* CallFunc_GetGameInstanceSubsystem_ReturnValue_1, bool CallFunc_IsMapReadyCalled_ReturnValue, bool CallFunc_IsMapReadyCalled_ReturnValue_1, UMapSubSystem* CallFunc_GetGameInstanceSubsystem_ReturnValue_2, UMapSubSystem* CallFunc_GetGameInstanceSubsystem_ReturnValue_3, bool CallFunc_IsMapReadyCalled_ReturnValue_2, bool CallFunc_IsMapReadyCalled_ReturnValue_3, UMapSubSystem* CallFunc_GetGameInstanceSubsystem_ReturnValue_4, UMapSubSystem* CallFunc_GetGameInstanceSubsystem_ReturnValue_5, bool CallFunc_IsMapReadyCalled_ReturnValue_4, bool CallFunc_IsMapReadyCalled_ReturnValue_5, UMapSubSystem* CallFunc_GetGameInstanceSubsystem_ReturnValue_6, UMapSubSystem* CallFunc_GetGameInstanceSubsystem_ReturnValue_7, bool CallFunc_IsMapReadyCalled_ReturnValue_6, bool CallFunc_IsMapReadyCalled_ReturnValue_7, UMapSubSystem* CallFunc_GetGameInstanceSubsystem_ReturnValue_8, UMapSubSystem* CallFunc_GetGameInstanceSubsystem_ReturnValue_9, bool CallFunc_IsMapReadyCalled_ReturnValue_8, bool CallFunc_IsMapReadyCalled_ReturnValue_9, int32_t Temp_int_Loop_Counter_Variable_1, ULegendItem* CallFunc_GetLegendItem_ReturnValue, ULegendItem* CallFunc_GetLegendItem_ReturnValue_1, int32_t CallFunc_Add_IntInt_ReturnValue_1, FLegendItemData CallFunc_Array_Get_Item, FLegendItemData CallFunc_Array_Get_Item_1, bool CallFunc_EqualEqual_ByteByte_ReturnValue_4, bool CallFunc_BooleanAND_ReturnValue, bool CallFunc_EqualEqual_ByteByte_ReturnValue_5, bool CallFunc_BooleanAND_ReturnValue_1, int32_t CallFunc_Array_Length_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, int32_t CallFunc_Array_Length_ReturnValue_1, bool CallFunc_Less_IntInt_ReturnValue_1, bool CallFunc_EqualEqual_ByteByte_ReturnValue_6, bool CallFunc_EqualEqual_ByteByte_ReturnValue_7, bool CallFunc_EqualEqual_ByteByte_ReturnValue_8);
+    void BndEvt__UI_BP_FieldGuide_btn_Inventory_K2Node_ComponentBoundEvent_0_OnHoveredEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Inventory_K2Node_ComponentBoundEvent_1_OnClickedEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Inventory_K2Node_ComponentBoundEvent_2_OnUnhoveredEventDispatcher__DelegateSignature();
+    void BndEvt__UI_BP_FieldGuide_btn_Character_K2Node_ComponentBoundEvent_3_OnHoveredEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Character_K2Node_ComponentBoundEvent_4_OnClickedEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Character_K2Node_ComponentBoundEvent_5_OnUnhoveredEventDispatcher__DelegateSignature();
+    void BndEvt__UI_BP_FieldGuide_btn_Talents_K2Node_ComponentBoundEvent_6_OnHoveredEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Talents_K2Node_ComponentBoundEvent_7_OnClickedEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Talents_K2Node_ComponentBoundEvent_8_OnUnhoveredEventDispatcher__DelegateSignature();
+    void BndEvt__UI_BP_FieldGuide_btn_Missions_K2Node_ComponentBoundEvent_9_OnHoveredEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Missions_K2Node_ComponentBoundEvent_10_OnClickedEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Missions_K2Node_ComponentBoundEvent_11_OnUnhoveredEventDispatcher__DelegateSignature();
+    void BndEvt__UI_BP_FieldGuide_btn_Map_K2Node_ComponentBoundEvent_12_OnHoveredEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Map_K2Node_ComponentBoundEvent_13_OnClickedEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Map_K2Node_ComponentBoundEvent_14_OnUnhoveredEventDispatcher__DelegateSignature();
+    void BndEvt__UI_BP_FieldGuide_btn_Mail_K2Node_ComponentBoundEvent_15_OnHoveredEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Mail_K2Node_ComponentBoundEvent_16_OnClickedEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Mail_K2Node_ComponentBoundEvent_17_OnUnhoveredEventDispatcher__DelegateSignature();
+    void BndEvt__UI_BP_FieldGuide_btn_Compendium_K2Node_ComponentBoundEvent_18_OnHoveredEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Compendium_K2Node_ComponentBoundEvent_19_OnClickedEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Compendium_K2Node_ComponentBoundEvent_20_OnUnhoveredEventDispatcher__DelegateSignature();
+    void BndEvt__UI_BP_FieldGuide_btn_Settings_K2Node_ComponentBoundEvent_21_OnHoveredEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Settings_K2Node_ComponentBoundEvent_22_OnClickedEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Settings_K2Node_ComponentBoundEvent_23_OnUnhoveredEventDispatcher__DelegateSignature();
+    void BndEvt__UI_BP_FieldGuide_btn_Actions_K2Node_ComponentBoundEvent_24_OnHoveredEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Actions_K2Node_ComponentBoundEvent_25_OnClickedEventDispatcher__DelegateSignature(UUI_BP_NavBarButton_C* Me);
+    void BndEvt__UI_BP_FieldGuide_btn_Actions_K2Node_ComponentBoundEvent_26_OnUnhoveredEventDispatcher__DelegateSignature();
+    void Construct();
+    void BndEvt__Async_FG_Index_K2Node_ComponentBoundEvent_10_GearScreenSelected__DelegateSignature();
+    void BndEvt__Async_FG_Index_K2Node_ComponentBoundEvent_11_InventoryScreenSelected__DelegateSignature();
+    void BndEvt__Async_FG_Index_K2Node_ComponentBoundEvent_12_TalentsScreenSelected__DelegateSignature();
+    void BndEvt__Async_FG_Index_K2Node_ComponentBoundEvent_13_SettingsScreenSelected__DelegateSignature();
+    void BndEvt__Async_FG_Index_K2Node_ComponentBoundEvent_14_MapScreenSelected__DelegateSignature();
+    void BndEvt__Async_FG_Index_K2Node_ComponentBoundEvent_15_CollectionsScreenSelected__DelegateSignature();
+    void BndEvt__Async_FG_Index_K2Node_ComponentBoundEvent_16_OwlMailScreenSelected__DelegateSignature();
+    void BndEvt__Async_FG_Index_K2Node_ComponentBoundEvent_17_QuestsScreenSelected__DelegateSignature();
+    void BndEvt__Async_FG_Index_K2Node_ComponentBoundEvent_18_ActionsScreenSelected__DelegateSignature();
+    void BndEvt__UI_BP_FieldGuide_Async_FG_Gear_K2Node_ComponentBoundEvent_0_AsyncWrapperClassLoadEvent__DelegateSignature(UAsyncLoadWrapper* SelfReference);
+    void BndEvt__UI_BP_FieldGuide_Async_FG_Inventory_K2Node_ComponentBoundEvent_1_AsyncWrapperClassLoadEvent__DelegateSignature(UAsyncLoadWrapper* SelfReference);
+    void BndEvt__UI_BP_FieldGuide_MenuWidgetSwitcher_K2Node_ComponentBoundEvent_2_WidgetActiveEvent__DelegateSignature(UUserWidget* ActiveWidget);
+    void BndEvt__UI_BP_FieldGuide_HiddenButtonForHoverEvents_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature();
+    void BndEvt__UI_BP_FieldGuide_HiddenButtonForHoverEvents_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature();
+    void DelayShowingIndex(UObject* Caller);
+    void DelayLeavingMapDir(UObject* Caller, int32_t int);
+    void ClosePauseMenu(UObject* Caller, int32_t int);
+    void BndEvt__UI_BP_FieldGuide_Async_FG_Quests_K2Node_ComponentBoundEvent_5_AsyncWrapperClassLoadEvent__DelegateSignature(UAsyncLoadWrapper* SelfReference);
+    void BndEvt__UI_BP_FieldGuide_Async_FG_Talents_K2Node_ComponentBoundEvent_8_AsyncWrapperClassLoadEvent__DelegateSignature(UAsyncLoadWrapper* SelfReference);
+    void DelayLeavingFieldGuide(UObject* Caller);
+    void UpdateMenuLegend0(TArray<FLegendItemData>& NewData);
+    void BndEvt__UI_BP_FieldGuide_Async_FG_Actions_K2Node_ComponentBoundEvent_5_AsyncWrapperClassLoadEvent__DelegateSignature(UAsyncLoadWrapper* SelfReference);
+    void BndEvt__UI_BP_FieldGuide_Async_FG_Collections_K2Node_ComponentBoundEvent_7_AsyncWrapperClassLoadEvent__DelegateSignature(UAsyncLoadWrapper* SelfReference);
+    void BndEvt__UI_BP_FieldGuide_Async_FG_Map_K2Node_ComponentBoundEvent_9_AsyncWrapperClassLoadEvent__DelegateSignature(UAsyncLoadWrapper* SelfReference);
+    void BndEvt__UI_BP_FieldGuide_Async_FG_OwlMail_K2Node_ComponentBoundEvent_19_AsyncWrapperClassLoadEvent__DelegateSignature(UAsyncLoadWrapper* SelfReference);
+    void BndEvt__UI_BP_FieldGuide_Async_FG_Settings_K2Node_ComponentBoundEvent_20_AsyncWrapperClassLoadEvent__DelegateSignature(UAsyncLoadWrapper* SelfReference);
+    void BndEvt__UI_BP_FieldGuide_NavBarLeftButton_K2Node_ComponentBoundEvent_21_OnButtonClickedEvent__DelegateSignature();
+    void BndEvt__UI_BP_FieldGuide_NavBarRightButton_K2Node_ComponentBoundEvent_22_OnButtonClickedEvent__DelegateSignature();
+    void ShowHDRActor(UObject* Caller);
+    void HideHDRActor(UObject* Caller);
+    void BndEvt__UI_BP_FieldGuide_FG_IndexPage_K2Node_ComponentBoundEvent_23_NewButtonLegendRequested__DelegateSignature(TArray<FLegendItemData>& NewLegend);
+    void BndEvt__UI_BP_FieldGuide_FG_IndexPage_K2Node_ComponentBoundEvent_24_MenuReadLegendRequested__DelegateSignature();
+    void MenuReadLegend0();
+    void ChangeMenuPage0(EUMGInputAction MenuPage);
+    void ShowFieldGuideBackground(UObject* Caller);
+    void MapReady(UObject* Caller);
+    void ExecuteUbergraph_UI_BP_FieldGuide(int32_t EntryPoint);
+}; // Size: 0x608
+#pragma pack(pop)

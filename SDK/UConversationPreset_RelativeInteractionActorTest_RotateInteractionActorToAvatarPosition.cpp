@@ -1,0 +1,6 @@
+#include "UConversationPreset_RelativeInteractionActorTest.hpp"
+#include "UConversationPreset_RelativeInteractionActorTest_RotateInteractionActorToAvatarPosition.hpp"
+UConversationPreset_RelativeInteractionActorTest_RotateInteractionActorToAvatarPosition* UConversationPreset_RelativeInteractionActorTest_RotateInteractionActorToAvatarPosition::StaticClass() {
+    static auto res = find_uobject("Class /Script/AvaAnimation.ConversationPreset_RelativeInteractionActorTest_RotateInteractionActorToAvatarPosition");
+    return (UConversationPreset_RelativeInteractionActorTest_RotateInteractionActorToAvatarPosition*)res;
+}

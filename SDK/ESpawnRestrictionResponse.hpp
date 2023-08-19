@@ -1,0 +1,19 @@
+#pragma once
+#include <cstdint>
+#pragma pack(push, 1)
+enum class ESpawnRestrictionResponse : uint8_t {
+    SRR_NO_RESTRICTIONS = 0,
+    SRR_FAIL_UNREGISTERED_TYPE = 1,
+    SRR_FAIL_TIME_RESTRICTION = 2,
+    SRR_FAIL_DATE_RESTRICTION = 3,
+    SRR_FAIL_SEASON_RESTRICTION = 4,
+    SRR_FAIL_COUNT_RESTRICTION = 5,
+    SRR_FAIL_PLACE_RESTRICTION = 6,
+    SRR_FAIL_MISSION_RESTRICTION = 7,
+    SRR_FAIL_MISSION_RESTRICTION_NO_CALLBACK = 8,
+    SRR_FAIL_LOCKED = 9,
+    SRR_FAIL_LEVEL_NOT_LOADED = 10,
+    SRR_FAIL_UNKNOWN = 11,
+    SRR_MAX = 12,
+};
+#pragma pack(pop)

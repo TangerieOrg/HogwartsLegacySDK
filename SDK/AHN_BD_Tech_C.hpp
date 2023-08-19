@@ -1,0 +1,26 @@
+#pragma once
+#include <cstdint>
+#include "ALevelScriptActor.hpp"
+#include "AmbientChatterTopicIDs.hpp"
+#include "FHitResult.hpp"
+#include "FPointerToUberGraphFrame.hpp"
+#include "FVector.hpp"
+class ABP_Hamlets_RichPaperGeneral_C;
+class AActor;
+class USocialReactor;
+class ABiped_Character;
+#pragma pack(push, 1)
+class AHN_BD_Tech_C : public ALevelScriptActor {
+public:
+    FPointerToUberGraphFrame UberGraphFrame; // 0x250
+    TArray<AmbientChatterTopicIDs> Topics_Pool; // 0x258
+    ABP_Hamlets_RichPaperGeneral_C* BP_Hamlets_RichPaperGeneral3_8_ExecuteUbergraph_HN_BD_Tech_RefProperty; // 0x268
+    ABP_Hamlets_RichPaperGeneral_C* BP_Hamlets_RichPaperGeneral6_ExecuteUbergraph_HN_BD_Tech_RefProperty; // 0x270
+    ABP_Hamlets_RichPaperGeneral_C* BP_Hamlets_RichPaperGeneral5_ExecuteUbergraph_HN_BD_Tech_RefProperty; // 0x278
+    ABP_Hamlets_RichPaperGeneral_C* BP_Hamlets_RichPaperGeneral2_ExecuteUbergraph_HN_BD_Tech_RefProperty; // 0x280
+    static AHN_BD_Tech_C* StaticClass();
+    void BndEvt__HN_BD_Tech_Chatter_K2Node_ActorBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature(AActor* OverlappedActor, AActor* OtherActor);
+    void BndEvt__HN_BD_Tech_Chatter_K2Node_ActorBoundEvent_1_ActorEndOverlapSignature__DelegateSignature(AActor* OverlappedActor, AActor* OtherActor);
+    void ExecuteUbergraph_HN_BD_Tech(int32_t EntryPoint, int32_t Temp_int_Array_Index_Variable, bool Temp_bool_Has_Been_Initd_Variable, AmbientChatterTopicIDs Temp_byte_Variable, bool Temp_bool_IsClosed_Variable, bool Temp_bool_Has_Been_Initd_Variable_1, bool Temp_bool_IsClosed_Variable_1, int32_t Temp_int_Array_Index_Variable_1, int32_t Temp_int_Loop_Counter_Variable, int32_t CallFunc_Add_IntInt_ReturnValue, int32_t Temp_int_Array_Index_Variable_2, AmbientChatterTopicIDs Temp_byte_Variable_1, bool Temp_bool_IsClosed_Variable_2, bool Temp_bool_Has_Been_Initd_Variable_2, int32_t Temp_int_Loop_Counter_Variable_1, int32_t CallFunc_Add_IntInt_ReturnValue_1, USocialReactor* CallFunc_GetTheSocialReactor_ReturnValue, USocialReactor* CallFunc_GetTheSocialReactor_ReturnValue_1, AmbientChatterTopicIDs Temp_byte_Variable_2, AActor* K2Node_ActorBoundEvent_OverlappedActor_1, AActor* K2Node_ActorBoundEvent_OtherActor_1, ABiped_Character* K2Node_DynamicCast_AsBiped_Character, bool K2Node_DynamicCast_bSuccess, AActor* K2Node_ActorBoundEvent_OverlappedActor, AActor* K2Node_ActorBoundEvent_OtherActor, ABiped_Character* K2Node_DynamicCast_AsBiped_Character_1, bool K2Node_DynamicCast_bSuccess_1, AmbientChatterTopicIDs CallFunc_Array_Get_Item, int32_t CallFunc_Array_Length_ReturnValue, FString CallFunc_GetEnumeratorUserFriendlyName_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, AmbientChatterTopicIDs CallFunc_Array_Get_Item_1, bool CallFunc_Array_RemoveItem_ReturnValue, FString CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1, int32_t CallFunc_Array_Length_ReturnValue_1, FName CallFunc_GetLockName_ReturnValue, bool CallFunc_IsLockedPure_ReturnValue, int32_t CallFunc_Array_Add_ReturnValue, bool CallFunc_Array_RemoveItem_ReturnValue_1, int32_t Temp_int_Loop_Counter_Variable_2, FName CallFunc_GetLockName_ReturnValue_1, bool CallFunc_IsLockedPure_ReturnValue_1, bool CallFunc_Less_IntInt_ReturnValue_1, int32_t CallFunc_Add_IntInt_ReturnValue_2, bool CallFunc_GetMissionStepCompletedBP_ReturnValue, TArray<ABP_Hamlets_RichPaperGeneral_C*>& K2Node_MakeArray_Array, ABP_Hamlets_RichPaperGeneral_C* CallFunc_Array_Get_Item_2, int32_t CallFunc_Array_Length_ReturnValue_2, bool CallFunc_Less_IntInt_ReturnValue_2, FVector CallFunc_K2_GetActorLocation_ReturnValue, FVector CallFunc_Add_VectorVector_ReturnValue, FHitResult CallFunc_K2_SetActorLocation_SweepHitResult, bool CallFunc_K2_SetActorLocation_ReturnValue);
+}; // Size: 0x288
+#pragma pack(pop)

@@ -1,0 +1,9 @@
+#pragma once
+#include <cstdint>
+#include "FVector4.hpp"
+#pragma pack(push, 1)
+struct FAkAcousticTextureParams {
+    FVector4 AbsorptionValues; // 0x0
+    char pad_10[0x10];
+}; // Size: 0x20
+#pragma pack(pop)

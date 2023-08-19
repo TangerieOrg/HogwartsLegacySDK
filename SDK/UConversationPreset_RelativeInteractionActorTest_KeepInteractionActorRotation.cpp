@@ -1,0 +1,6 @@
+#include "UConversationPreset_RelativeInteractionActorTest.hpp"
+#include "UConversationPreset_RelativeInteractionActorTest_KeepInteractionActorRotation.hpp"
+UConversationPreset_RelativeInteractionActorTest_KeepInteractionActorRotation* UConversationPreset_RelativeInteractionActorTest_KeepInteractionActorRotation::StaticClass() {
+    static auto res = find_uobject("Class /Script/AvaAnimation.ConversationPreset_RelativeInteractionActorTest_KeepInteractionActorRotation");
+    return (UConversationPreset_RelativeInteractionActorTest_KeepInteractionActorRotation*)res;
+}

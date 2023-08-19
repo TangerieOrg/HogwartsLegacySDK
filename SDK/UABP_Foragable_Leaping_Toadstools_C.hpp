@@ -1,0 +1,121 @@
+#pragma once
+#include <cstdint>
+#include "FAnimNode_Root.hpp"
+#include "FAnimNode_SequencePlayer.hpp"
+#include "FAnimNode_StateMachine.hpp"
+#include "FAnimNode_StateResult.hpp"
+#include "FAnimNode_TransitionResult.hpp"
+#include "FPointerToUberGraphFrame.hpp"
+#include "UAnimInstance.hpp"
+struct FPoseLink;
+#pragma pack(push, 1)
+class UABP_Foragable_Leaping_Toadstools_C : public UAnimInstance {
+public:
+    FPointerToUberGraphFrame UberGraphFrame; // 0x2c0
+    FAnimNode_Root AnimGraphNode_Root; // 0x2c8
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_36; // 0x2f8
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_35; // 0x320
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_34; // 0x348
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_33; // 0x370
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_32; // 0x398
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_31; // 0x3c0
+    FAnimNode_SequencePlayer AnimGraphNode_SequencePlayer_9; // 0x3e8
+    FAnimNode_StateResult AnimGraphNode_StateResult_11; // 0x468
+    FAnimNode_SequencePlayer AnimGraphNode_SequencePlayer_8; // 0x498
+    FAnimNode_StateResult AnimGraphNode_StateResult_10; // 0x518
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_30; // 0x548
+    FAnimNode_SequencePlayer AnimGraphNode_SequencePlayer_7; // 0x570
+    FAnimNode_StateResult AnimGraphNode_StateResult_9; // 0x5f0
+    FAnimNode_SequencePlayer AnimGraphNode_SequencePlayer_6; // 0x620
+    FAnimNode_StateResult AnimGraphNode_StateResult_8; // 0x6a0
+    FAnimNode_StateMachine AnimGraphNode_StateMachine_2; // 0x6d0
+    FAnimNode_StateResult AnimGraphNode_StateResult_7; // 0x780
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_29; // 0x7b0
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_28; // 0x7d8
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_27; // 0x800
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_26; // 0x828
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_25; // 0x850
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_24; // 0x878
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_23; // 0x8a0
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_22; // 0x8c8
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_21; // 0x8f0
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_20; // 0x918
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_19; // 0x940
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_18; // 0x968
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_17; // 0x990
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_16; // 0x9b8
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_15; // 0x9e0
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_14; // 0xa08
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_13; // 0xa30
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_12; // 0xa58
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_11; // 0xa80
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_10; // 0xaa8
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_9; // 0xad0
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_8; // 0xaf8
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_7; // 0xb20
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_6; // 0xb48
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_5; // 0xb70
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_4; // 0xb98
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_3; // 0xbc0
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_2; // 0xbe8
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult_1; // 0xc10
+    FAnimNode_TransitionResult AnimGraphNode_TransitionResult; // 0xc38
+    FAnimNode_SequencePlayer AnimGraphNode_SequencePlayer_5; // 0xc60
+    FAnimNode_StateResult AnimGraphNode_StateResult_6; // 0xce0
+    FAnimNode_SequencePlayer AnimGraphNode_SequencePlayer_4; // 0xd10
+    FAnimNode_StateResult AnimGraphNode_StateResult_5; // 0xd90
+    FAnimNode_SequencePlayer AnimGraphNode_SequencePlayer_3; // 0xdc0
+    FAnimNode_StateResult AnimGraphNode_StateResult_4; // 0xe40
+    FAnimNode_SequencePlayer AnimGraphNode_SequencePlayer_2; // 0xe70
+    FAnimNode_StateResult AnimGraphNode_StateResult_3; // 0xef0
+    FAnimNode_SequencePlayer AnimGraphNode_SequencePlayer_1; // 0xf20
+    FAnimNode_StateResult AnimGraphNode_StateResult_2; // 0xfa0
+    FAnimNode_SequencePlayer AnimGraphNode_SequencePlayer; // 0xfd0
+    FAnimNode_StateResult AnimGraphNode_StateResult_1; // 0x1050
+    FAnimNode_StateMachine AnimGraphNode_StateMachine_1; // 0x1080
+    FAnimNode_StateResult AnimGraphNode_StateResult; // 0x1130
+    FAnimNode_StateMachine AnimGraphNode_StateMachine; // 0x1160
+    int32_t NextState; // 0x1210
+    bool PlayerClose; // 0x1214
+    bool CollectToadstool; // 0x1215
+    bool ResetFromCollect; // 0x1216
+    char pad_1217[0x9];
+    static UABP_Foragable_Leaping_Toadstools_C* StaticClass();
+    void AnimGraph(FPoseLink& AnimGraph);
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_0CB2AEC3411637AA8AC9D0B6F1949735();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_14DBA6F64F89BB23F677738F6BDD210C();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_AFDA26DA4E15C0704DA963A9522986C7();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_A0026AC14ADE90E865E969A2CACCB8C3();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_E14BBFF84779138C0710DFAEF4517E7C();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_E6432F1D4605833BB48667BEC86CCF97();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_F35501354323F031DFE5F6A0D9AF3606();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_B9FF5AB3447460B3BA685EB146934938();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_5BC9F1044DB519441AAB4A913995C116();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_AE4D65C345F6BD09BD5A49B73AAE8963();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_D7239400464F50C6656B1497BC50DC76();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_EA664E084DDD41F75BAADEA2DC0612A3();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_5BBA836944D336DE2A343BB622E86E7C();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_4B647BB34B0951F6257132A4042BC1A8();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_C9F881664E10CDD9C0C1C2832F656AAE();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_7E0E602F4FF9384D49BCBFA86D7787F2();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_3002EA5849B433E1041BC6B7873F61DD();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_94E8362749C5F018FCE6A293BEC8D6EE();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_D796B0FC436636FF68B501ACD494EA53();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_B155FE6A4CB3A11C6566AFA3A48066E5();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_C08527EC47A2E1D6FB87809D69DB8B38();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_C71365914E298B8F0DAB3399627BB0BD();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_8A9A3B794305640D20691DA79DC1B3D5();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_D71D4D7C40977F358FCD8B8A368AFF4E();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_5BCB66554A0418E896AD37854BA9BBC0();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_ACA3A02947FD4D220CD746BB0E661D19();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_36F2E0CB42575D97010469AEAAD3477A();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_18D6B6F74BD2F4890FAB54960AA2690E();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_E35BF5C14A300453ECAE3281263FA684();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_F3DF7F434D5D4E9E700AC598AE9DEDB3();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_51929BC747056C04EFAF819858ED4478();
+    void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools_AnimGraphNode_TransitionResult_FB784DA74506DC0685E389A5F2F9C8CB();
+    void BlueprintUpdateAnimation0(float DeltaTimeX);
+    void ResetFromCollectEvent();
+    void ExecuteUbergraph_ABP_Foragable_Leaping_Toadstools(int32_t EntryPoint, float CallFunc_GetInstanceAssetPlayerTimeFromEnd_ReturnValue, bool CallFunc_EqualEqual_FloatFloat_ReturnValue, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_1, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_1, bool CallFunc_EqualEqual_IntInt_ReturnValue, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_2, bool CallFunc_BooleanAND_ReturnValue, bool CallFunc_EqualEqual_IntInt_ReturnValue_1, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_2, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_3, bool CallFunc_BooleanAND_ReturnValue_1, bool CallFunc_EqualEqual_IntInt_ReturnValue_2, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_3, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_4, bool CallFunc_EqualEqual_IntInt_ReturnValue_3, bool CallFunc_BooleanAND_ReturnValue_2, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_4, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_5, bool CallFunc_BooleanAND_ReturnValue_3, bool CallFunc_EqualEqual_IntInt_ReturnValue_4, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_5, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_6, bool CallFunc_EqualEqual_IntInt_ReturnValue_5, bool CallFunc_BooleanAND_ReturnValue_4, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_6, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_7, bool CallFunc_BooleanAND_ReturnValue_5, bool CallFunc_EqualEqual_IntInt_ReturnValue_6, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_7, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_8, bool CallFunc_EqualEqual_IntInt_ReturnValue_7, bool CallFunc_BooleanAND_ReturnValue_6, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_8, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_9, bool CallFunc_BooleanAND_ReturnValue_7, bool CallFunc_EqualEqual_IntInt_ReturnValue_8, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_9, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_10, bool CallFunc_EqualEqual_IntInt_ReturnValue_9, bool CallFunc_BooleanAND_ReturnValue_8, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_10, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_11, bool CallFunc_BooleanAND_ReturnValue_9, bool CallFunc_EqualEqual_IntInt_ReturnValue_10, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_11, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_12, bool CallFunc_EqualEqual_IntInt_ReturnValue_11, bool CallFunc_BooleanAND_ReturnValue_10, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_12, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_13, bool CallFunc_BooleanAND_ReturnValue_11, bool CallFunc_EqualEqual_IntInt_ReturnValue_12, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_13, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_14, bool CallFunc_EqualEqual_IntInt_ReturnValue_13, bool CallFunc_BooleanAND_ReturnValue_12, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_14, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_15, bool CallFunc_BooleanAND_ReturnValue_13, bool CallFunc_EqualEqual_IntInt_ReturnValue_14, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_15, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_16, bool CallFunc_EqualEqual_IntInt_ReturnValue_15, bool CallFunc_BooleanAND_ReturnValue_14, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_16, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_17, bool CallFunc_BooleanAND_ReturnValue_15, bool CallFunc_EqualEqual_IntInt_ReturnValue_16, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_17, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_18, bool CallFunc_EqualEqual_IntInt_ReturnValue_17, bool CallFunc_BooleanAND_ReturnValue_16, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_18, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_19, bool CallFunc_BooleanAND_ReturnValue_17, bool CallFunc_EqualEqual_IntInt_ReturnValue_18, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_19, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_20, bool CallFunc_EqualEqual_IntInt_ReturnValue_19, bool CallFunc_BooleanAND_ReturnValue_18, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_20, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_21, bool CallFunc_BooleanAND_ReturnValue_19, bool CallFunc_EqualEqual_IntInt_ReturnValue_20, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_21, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_22, bool CallFunc_EqualEqual_IntInt_ReturnValue_21, bool CallFunc_BooleanAND_ReturnValue_20, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_22, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_23, bool CallFunc_BooleanAND_ReturnValue_21, bool CallFunc_EqualEqual_IntInt_ReturnValue_22, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_23, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_24, bool CallFunc_EqualEqual_IntInt_ReturnValue_23, bool CallFunc_BooleanAND_ReturnValue_22, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_24, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_25, bool CallFunc_BooleanAND_ReturnValue_23, bool CallFunc_EqualEqual_IntInt_ReturnValue_24, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_25, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_26, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_26, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_27, bool CallFunc_BooleanAND_ReturnValue_24, bool CallFunc_EqualEqual_IntInt_ReturnValue_25, bool CallFunc_BooleanAND_ReturnValue_25, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_27, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_28, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_28, bool CallFunc_EqualEqual_IntInt_ReturnValue_26, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_29, bool CallFunc_BooleanAND_ReturnValue_26, bool CallFunc_EqualEqual_IntInt_ReturnValue_27, bool CallFunc_BooleanAND_ReturnValue_27, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_29, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_30, float CallFunc_GetRelevantAnimTimeRemaining_ReturnValue_30, bool CallFunc_EqualEqual_IntInt_ReturnValue_28, bool CallFunc_EqualEqual_FloatFloat_ReturnValue_31, bool CallFunc_BooleanAND_ReturnValue_28, bool CallFunc_EqualEqual_IntInt_ReturnValue_29, bool CallFunc_BooleanAND_ReturnValue_29, float K2Node_Event_DeltaTimeX, int32_t CallFunc_RandomIntegerInRange_ReturnValue);
+}; // Size: 0x1220
+#pragma pack(pop)

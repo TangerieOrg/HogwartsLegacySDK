@@ -1,0 +1,22 @@
+#pragma once
+#include <cstdint>
+#include "FPointerToUberGraphFrame.hpp"
+#include "FVariantMapHandle.hpp"
+#include "UBTTask_AvaAITree_Input.hpp"
+class AActor;
+class UAnimInstance;
+class UAISense;
+#pragma pack(push, 1)
+class UBTT_BipedUpper_TargetSighted_C : public UBTTask_AvaAITree_Input {
+public:
+    FPointerToUberGraphFrame UberGraphFrame; // 0x150
+    static UBTT_BipedUpper_TargetSighted_C* StaticClass();
+    void InpActEvt_InteractButton_K2Node_CustomInputActionEvent_0(FVariantMapHandle VariantMapHandle);
+    void ExitTask(AActor* OwnerActor);
+    void ReceiveExecute(AActor* OwnerActor);
+    void TSighted(UAISense* Sense, AActor* Target);
+    void TChanged(UAISense* Sense, AActor* NewTarget, AActor* OldTarget);
+    void TLost(UAISense* Sense, AActor* OldTarget);
+    void ExecuteUbergraph_BTT_BipedUpper_TargetSighted(int32_t EntryPoint, UAnimInstance* CallFunc_GetAnimInstance_ReturnValue);
+}; // Size: 0x158
+#pragma pack(pop)

@@ -1,0 +1,6 @@
+#include "UConversationPreset_PreInitInvoke_Placement.hpp"
+#include "UConversationPreset_PreInitInvoke_Placement_RelativeInteractionActor.hpp"
+UConversationPreset_PreInitInvoke_Placement_RelativeInteractionActor* UConversationPreset_PreInitInvoke_Placement_RelativeInteractionActor::StaticClass() {
+    static auto res = find_uobject("Class /Script/AvaAnimation.ConversationPreset_PreInitInvoke_Placement_RelativeInteractionActor");
+    return (UConversationPreset_PreInitInvoke_Placement_RelativeInteractionActor*)res;
+}

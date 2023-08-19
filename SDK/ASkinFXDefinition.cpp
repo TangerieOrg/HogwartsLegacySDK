@@ -1,0 +1,27 @@
+#include "AActor.hpp"
+#include "ASkinFXDefinition.hpp"
+#include "ESkinFXEffectPriority.hpp"
+#include "ESkinFXEffectSwapType.hpp"
+#include "ESkinFXEffectTimeSource.hpp"
+#include "FMaterialSwapRules.hpp"
+#include "FNiagaraMaterialDriverSetup.hpp"
+#include "FSkinFXASREnvelope.hpp"
+#include "FSkinFXColor.hpp"
+#include "FSkinFXColorCurve.hpp"
+#include "FSkinFXFunctionMod.hpp"
+#include "FSkinFXNoiseFunctionMod.hpp"
+#include "FSkinFXScalar.hpp"
+#include "FSkinFXScalarCurve.hpp"
+#include "FSkinFXSocket.hpp"
+#include "FSkinFXSocketLerp.hpp"
+#include "FSkinFXStandardParams.hpp"
+#include "FSkinFXStandardParamsInitial.hpp"
+#include "FSkinFXSubTypeProperty.hpp"
+#include "FSkinFXTexture.hpp"
+#include "UMaterialSwapMeshState.hpp"
+#include "USkinFXEventTrigger.hpp"
+#include "USkinFXParameterDriver.hpp"
+ASkinFXDefinition* ASkinFXDefinition::StaticClass() {
+    static auto res = find_uobject("Class /Script/SkinFX.SkinFXDefinition");
+    return (ASkinFXDefinition*)res;
+}

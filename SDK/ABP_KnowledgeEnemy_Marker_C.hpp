@@ -1,0 +1,14 @@
+#pragma once
+#include <cstdint>
+#include "ABP_Marker_Base_C.hpp"
+#include "E_OL_EnemyType\Type.hpp"
+#include "FColor.hpp"
+#include "FRotator.hpp"
+#include "FVector.hpp"
+#pragma pack(push, 1)
+class ABP_KnowledgeEnemy_Marker_C : public ABP_Marker_Base_C {
+public:
+    static ABP_KnowledgeEnemy_Marker_C* StaticClass();
+    void UserConstructionScript(bool bar_4, bool Bar_3, bool Bar_2, bool Bar_1, FString Enemy_Type, FString Knowledge_Location_Enemy, FColor K2Node_MakeStruct_Color, FColor K2Node_MakeStruct_Color_1, FColor K2Node_MakeStruct_Color_2, bool CallFunc_NotEqual_ByteByte_ReturnValue, bool CallFunc_NotEqual_ByteByte_ReturnValue_1, bool CallFunc_NotEqual_ByteByte_ReturnValue_2, bool CallFunc_NotEqual_ByteByte_ReturnValue_3, FString CallFunc_Concat_StrStr_ReturnValue, bool CallFunc_InitMarker_Valid, FString CallFunc_Concat_StrStr_ReturnValue_1, FString CallFunc_Concat_StrStr_ReturnValue_2, bool CallFunc_InitMarker_Valid_1, FString CallFunc_Concat_StrStr_ReturnValue_3, bool CallFunc_InitMarker_Valid_2, FString CallFunc_GetEnumeratorUserFriendlyName_ReturnValue, bool CallFunc_NotEqual_ByteByte_ReturnValue_4, FString CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1, FString CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_2, bool CallFunc_NotEqual_ByteByte_ReturnValue_5, bool CallFunc_NotEqual_ByteByte_ReturnValue_6, FString CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_3, bool CallFunc_NotEqual_ByteByte_ReturnValue_7, FColor K2Node_MakeStruct_Color_3, FRotator CallFunc_K2_GetActorRotation_ReturnValue, bool CallFunc_InitMarker_Valid_3, float CallFunc_BreakRotator_Roll, float CallFunc_BreakRotator_Pitch, float CallFunc_BreakRotator_Yaw, FVector CallFunc_K2_GetActorLocation_ReturnValue, FRotator CallFunc_K2_GetActorRotation_ReturnValue_1, FVector CallFunc_K2_GetActorLocation_ReturnValue_1, float CallFunc_BreakRotator_Roll_1, float CallFunc_BreakRotator_Pitch_1, float CallFunc_BreakRotator_Yaw_1, FRotator CallFunc_K2_GetActorRotation_ReturnValue_2, FVector CallFunc_K2_GetActorLocation_ReturnValue_2, float CallFunc_BreakRotator_Roll_2, float CallFunc_BreakRotator_Pitch_2, float CallFunc_BreakRotator_Yaw_2, FRotator CallFunc_K2_GetActorRotation_ReturnValue_3, FVector CallFunc_K2_GetActorLocation_ReturnValue_3, float CallFunc_BreakRotator_Roll_3, float CallFunc_BreakRotator_Pitch_3, float CallFunc_BreakRotator_Yaw_3);
+}; // Size: 0x308
+#pragma pack(pop)

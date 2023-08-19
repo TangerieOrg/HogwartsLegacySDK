@@ -1,0 +1,9 @@
+#pragma once
+#include <cstdint>
+#include "FTransform.hpp"
+#pragma pack(push, 1)
+struct FReferencePose {
+    FName PoseName; // 0x0
+    TArray<FTransform> ReferencePose; // 0x8
+}; // Size: 0x18
+#pragma pack(pop)

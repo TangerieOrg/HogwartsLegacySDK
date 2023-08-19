@@ -1,0 +1,36 @@
+#pragma once
+#include <cstdint>
+#pragma pack(push, 1)
+enum class ENPC_TargetSelectionScore {
+    Distance = 0,
+    MaintainTarget = 1,
+    StayIn = 2,
+    CognitionPriority = 3,
+    LargeCharacter = 4,
+    NumAttacking = 5,
+    RecentlyAttackedBy = 6,
+    RecentlyAttackedByPlayer = 7,
+    HighlightedByPlayer = 8,
+    Attacking = 9,
+    RecentlyAttackedPlayer = 10,
+    RecentlyAttackedTarget = 11,
+    Reacting = 12,
+    InCCReaction = 13,
+    InRagDoll = 14,
+    InAir = 15,
+    InCriticalHealth = 16,
+    InNearDeathKneeling = 17,
+    ShieldsOn = 18,
+    Level = 19,
+    Health = 20,
+    Threat = 21,
+    SpiderOnFire = 22,
+    InferiusOnFire = 23,
+    InferiusKamikaze = 24,
+    Leader = 25,
+    Perk = 26,
+    IneligibleToChange = 27,
+    Count = 28,
+    ENPC_MAX = 29,
+};
+#pragma pack(pop)

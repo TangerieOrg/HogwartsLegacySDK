@@ -1,0 +1,25 @@
+#include "UCollectSurfacePathMechanic.hpp"
+#include "UEditMeshPolygonsTool.hpp"
+#include "UEditMeshPolygonsToolActions.hpp"
+#include "UEditMeshPolygonsToolActions_Triangles.hpp"
+#include "UEditMeshPolygonsToolEdgeActions.hpp"
+#include "UEditMeshPolygonsToolEdgeActions_Triangles.hpp"
+#include "UEditMeshPolygonsToolUVActions.hpp"
+#include "UMeshSurfacePointTool.hpp"
+#include "UMultiTransformer.hpp"
+#include "UPlaneDistanceFromHitMechanic.hpp"
+#include "UPolyEditCommonProperties.hpp"
+#include "UPolyEditCutProperties.hpp"
+#include "UPolyEditExtrudeProperties.hpp"
+#include "UPolyEditInsetProperties.hpp"
+#include "UPolyEditOffsetProperties.hpp"
+#include "UPolyEditOutsetProperties.hpp"
+#include "UPolyEditPreviewMesh.hpp"
+#include "UPolyEditSetUVProperties.hpp"
+#include "UPolygonSelectionMechanic.hpp"
+#include "USimpleDynamicMeshComponent.hpp"
+#include "USpatialCurveDistanceMechanic.hpp"
+UEditMeshPolygonsTool* UEditMeshPolygonsTool::StaticClass() {
+    static auto res = find_uobject("Class /Script/MeshModelingTools.EditMeshPolygonsTool");
+    return (UEditMeshPolygonsTool*)res;
+}

@@ -1,0 +1,35 @@
+#pragma once
+#include <cstdint>
+#pragma pack(push, 1)
+enum class EEnemy_AttackLocSource : uint8_t {
+    None = 0,
+    PieCut = 1,
+    Evade = 2,
+    Reposition = 3,
+    Close = 4,
+    SeekWeapon = 5,
+    Cover = 6,
+    Flee = 7,
+    Follow = 8,
+    Direct = 9,
+    InOut = 10,
+    Sidekick = 11,
+    Around = 12,
+    Retreat = 13,
+    SeekTarget = 14,
+    LeadPlayer = 15,
+    BackOnNav = 16,
+    TooClose = 17,
+    SwimToShore = 18,
+    Standby = 19,
+    Duel = 20,
+    Alert = 21,
+    Outside = 22,
+    Companion = 23,
+    Combat = 24,
+    RecoverWeapon = 25,
+    POI = 26,
+    Count = 27,
+    EEnemy_MAX = 28,
+};
+#pragma pack(pop)

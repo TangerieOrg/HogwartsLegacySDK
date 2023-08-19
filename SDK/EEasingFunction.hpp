@@ -1,0 +1,38 @@
+#pragma once
+#include <cstdint>
+#pragma pack(push, 1)
+enum class EEasingFunction : uint8_t {
+    EF_None = 0,
+    EF_Back_In = 1,
+    EF_Back_Out = 2,
+    EF_Back_InOut = 3,
+    EF_Bounce_In = 4,
+    EF_Bounce_Out = 5,
+    EF_Bounce_InOut = 6,
+    EF_Circ_In = 7,
+    EF_Circ_Out = 8,
+    EF_Circ_InOut = 9,
+    EF_Cubic_In = 10,
+    EF_Cubic_Out = 11,
+    EF_Cubic_InOut = 12,
+    EF_Elastic_In = 13,
+    EF_Elastic_Out = 14,
+    EF_Elastic_InOut = 15,
+    EF_Expo_In = 16,
+    EF_Expo_Out = 17,
+    EF_Expo_InOut = 18,
+    EF_Linear_In = 19,
+    EF_Linear_Out = 20,
+    EF_Linear_InOut = 21,
+    EF_Quad_In = 22,
+    EF_Quad_Out = 23,
+    EF_Quad_InOut = 24,
+    EF_Quart_In = 25,
+    EF_Quart_Out = 26,
+    EF_Quart_InOut = 27,
+    EF_Quint_In = 28,
+    EF_Quint_Out = 29,
+    EF_Quint_InOut = 30,
+    EF_MAX = 31,
+};
+#pragma pack(pop)

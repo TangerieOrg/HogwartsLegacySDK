@@ -1,0 +1,18 @@
+#pragma once
+#include <cstdint>
+namespace EGoalStatusFlags {
+#pragma pack(push, 1)
+enum Type : uint8_t {
+    STATUS_FLAG_NONE = 0,
+    STATUS_FLAG_INTRANSIT = 1,
+    STATUS_FLAG_STATION_REQUIRED = 2,
+    STATUS_FLAG_INTERRUPTED = 4,
+    STATUS_FLAG_COMPLETE = 8,
+    STATUS_FLAG_DYNAMIC_IN_PROGRESS = 16,
+    STATUS_FLAG_FAST_TRAVEL = 32,
+    STATUS_FLAG_ENTER_COMPLETE_CALLBACK = 64,
+    STATUS_FLAG_EXIT_COMPLETE_CALLBACK = 128,
+    STATUS_FLAG_MAX = 129,
+};
+#pragma pack(pop)
+}

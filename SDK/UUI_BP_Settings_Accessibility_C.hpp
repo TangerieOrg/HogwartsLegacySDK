@@ -1,0 +1,183 @@
+#pragma once
+#include <cstdint>
+#include "EColorVisionDeficiency.hpp"
+#include "ESlateVisibility.hpp"
+#include "FMenuReaderVoice.hpp"
+#include "FPointerToUberGraphFrame.hpp"
+#include "UTabPageWidget.hpp"
+class UWidgetAnimation;
+class UUI_BP_SettingsDetails_C;
+class UUI_BP_SimpleScrollBox_C;
+class UUI_BP_SettingsCheckboxButton_C;
+struct FVector2D;
+class UUMGSequencePlayer;
+class UUI_BP_AudioLegendPopup_C;
+class UUI_BP_SettingsDropDownButton_C;
+class UUI_BP_MenuTextButton_C;
+class UUI_BP_SettingsSliderButton_C;
+class UPhoenixGameSettings;
+class UUserWidget;
+class ULegendItem;
+#pragma pack(push, 1)
+class UUI_BP_Settings_Accessibility_C : public UTabPageWidget {
+public:
+    FPointerToUberGraphFrame UberGraphFrame; // 0x3c8
+    UWidgetAnimation* FadeScrollBox; // 0x3d0
+    UWidgetAnimation* showDetails; // 0x3d8
+    UUI_BP_SettingsDetails_C* accessibilityDetails; // 0x3e0
+    UUI_BP_SimpleScrollBox_C* accessibilityScrollBox; // 0x3e8
+    UUI_BP_AudioLegendPopup_C* AudioCueHelpPage; // 0x3f0
+    UUI_BP_SettingsCheckboxButton_C* btn_aimMode; // 0x3f8
+    UUI_BP_SettingsCheckboxButton_C* btn_Arachnophobia; // 0x400
+    UUI_BP_MenuTextButton_C* btn_AudioCueLegend; // 0x408
+    UUI_BP_SettingsSliderButton_C* btn_AudioCueOpacity; // 0x410
+    UUI_BP_SettingsSliderButton_C* btn_AudioCueScale; // 0x418
+    UUI_BP_SettingsCheckboxButton_C* btn_AudioVisualizer; // 0x420
+    UUI_BP_SettingsSliderButton_C* btn_cameraShake; // 0x428
+    UUI_BP_SettingsCheckboxButton_C* btn_cinematicCameraShake; // 0x430
+    UUI_BP_SettingsDropDownButton_C* btn_colorOptions; // 0x438
+    UUI_BP_SettingsSliderButton_C* btn_cursorSensitivity; // 0x440
+    UUI_BP_SettingsSliderButton_C* btn_deadzone; // 0x448
+    UUI_BP_SettingsCheckboxButton_C* btn_GameHighContrast; // 0x450
+    UUI_BP_SettingsCheckboxButton_C* btn_MenuReader; // 0x458
+    UUI_BP_SettingsDropDownButton_C* btn_MenuReaderVoice; // 0x460
+    UUI_BP_SettingsSliderButton_C* btn_MenuReaderVolume; // 0x468
+    UUI_BP_SettingsSliderButton_C* btn_MiniMapOpacity; // 0x470
+    UUI_BP_SettingsCheckboxButton_C* btn_PathLine; // 0x478
+    UUI_BP_SettingsCheckboxButton_C* btn_southpaw; // 0x480
+    UUI_BP_SettingsCheckboxButton_C* btn_spellCastMode; // 0x488
+    UUI_BP_SettingsCheckboxButton_C* btn_switchSticks; // 0x490
+    UUI_BP_SettingsCheckboxButton_C* btn_TextHighContrast; // 0x498
+    UUI_BP_SettingsDropDownButton_C* drp_FontSize; // 0x4a0
+    char pad_4a8[0x90];
+    float MaxGamepadDeadzone; // 0x538
+    float MinGamepadDeadzone; // 0x53c
+    float MaxCameraShake; // 0x540
+    float MinCameraShake; // 0x544
+    TArray<FString> ContrastMode; // 0x548
+    bool isButtonHovered; // 0x558
+    bool isDetailsShowing; // 0x559
+    char pad_55a[0x2];
+    float CurrentHoverTime; // 0x55c
+    float RequiredHoverTime; // 0x560
+    char pad_564[0x4];
+    FString TooltipDescription; // 0x568
+    float MaxMiniMapOpacity; // 0x578
+    float MinMiniMapOpacity; // 0x57c
+    float MaxAudioCueOpacity; // 0x580
+    float MinAudioCueOpacity; // 0x584
+    float MaxAudioCueScale; // 0x588
+    float MinAudioCueScale; // 0x58c
+    float MaxMenuReaderVolume; // 0x590
+    float MinMenuReaderVolume; // 0x594
+    TArray<FMenuReaderVoice> CachedMenuReaderVoices; // 0x598
+    bool IsInFirstFlow; // 0x5a8
+    char pad_5a9[0x17];
+    static UUI_BP_Settings_Accessibility_C* StaticClass();
+    void GetAsyncWrapperRenderSize(FVector2D& RenderSize);
+    TArray<FString> GatherMenuReaderStrings(int32_t DepthLevel, TArray<FString> TempGatheredStrings, TArray<FString>& CallFunc_GatherMenuReaderStrings_ReturnValue, TArray<FString>& CallFunc_GatherMenuReaderStrings_ReturnValue_1, bool K2Node_SwitchInteger_CmpSuccess);
+    void SetIsInFirstFlow(bool InFirstFlow);
+    void RefreshMenuReaderRelatedSettings(TArray<FString> TempMenuReaderVoiceDescriptions, int32_t TempSelectedMenuReaderVoiceIndex, FMenuReaderVoice TempSelectedMenuReaderVoice, int32_t Temp_int_Array_Index_Variable, int32_t Temp_int_Loop_Counter_Variable, int32_t CallFunc_Add_IntInt_ReturnValue);
+    void HideTooltip(UUMGSequencePlayer* CallFunc_PlayAnimationReverse_ReturnValue);
+    void SetTooltipData(FString Title, FString Description, UUMGSequencePlayer* CallFunc_PlayAnimationForward_ReturnValue);
+    void InitAccessibilitySettings(float CallFunc_Subtract_FloatFloat_ReturnValue, UPhoenixGameSettings* CallFunc_GetPhoenixGameSettings_ReturnValue, bool CallFunc_GetAccessibilitySpellToggle_ReturnValue, int32_t Temp_int_Variable, int32_t Temp_int_Variable_1, int32_t Temp_int_Variable_2, int32_t Temp_int_Variable_3, EColorVisionDeficiency Temp_byte_Variable, float CallFunc_Subtract_FloatFloat_ReturnValue_1, TArray<FString>& K2Node_MakeArray_Array, UPhoenixGameSettings* CallFunc_GetPhoenixGameSettings_ReturnValue_1, bool CallFunc_GetGamepadAimingSwitch_ReturnValue, float CallFunc_GetMenuReaderVolume_ReturnValue, bool CallFunc_GetMenuReaderEnabled_ReturnValue, float CallFunc_Subtract_FloatFloat_ReturnValue_2, float CallFunc_Divide_FloatFloat_ReturnValue, float CallFunc_Multiply_FloatFloat_ReturnValue, float CallFunc_FClamp_ReturnValue, int32_t CallFunc_FFloor_ReturnValue);
+    void InEditorPostConstruct();
+    void SetParent(UUserWidget* Parent);
+    void Initialize();
+    void Construct();
+    void BndEvt__btn_cinematicCameraShake_K2Node_ComponentBoundEvent_4_SettingsCheckmarkPressed__DelegateSignature(bool IsChecked, UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__btn_colorOptions_K2Node_ComponentBoundEvent_16_DropDownOptionChanged__DelegateSignature(int32_t NewOptionIndex, UUI_BP_SettingsDropDownButton_C* Button);
+    void BndEvt__btn_aimMode_K2Node_ComponentBoundEvent_17_SettingsCheckmarkPressed__DelegateSignature(bool IsChecked, UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__btn_switchSticks_K2Node_ComponentBoundEvent_19_SettingsCheckmarkPressed__DelegateSignature(bool IsChecked, UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__btn_southpaw_K2Node_ComponentBoundEvent_20_SettingsCheckmarkPressed__DelegateSignature(bool IsChecked, UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__btn_colorOptions_K2Node_ComponentBoundEvent_0_DropdownHovered__DelegateSignature(UUI_BP_SettingsDropDownButton_C* Button);
+    void BndEvt__btn_colorOptions_K2Node_ComponentBoundEvent_1_DropdownUnhovered__DelegateSignature();
+    void BndEvt__btn_cameraShake_K2Node_ComponentBoundEvent_3_SettingsSliderHovered__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton);
+    void BndEvt__btn_cameraShake_K2Node_ComponentBoundEvent_5_SettingsSliderUnhovered__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton);
+    void BndEvt__btn_cinematicCameraShake_K2Node_ComponentBoundEvent_6_ToggleHovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__btn_cinematicCameraShake_K2Node_ComponentBoundEvent_7_ToggleUnhovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__btn_aimMode_K2Node_ComponentBoundEvent_8_ToggleHovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__btn_aimMode_K2Node_ComponentBoundEvent_9_ToggleUnhovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__btn_switchSticks_K2Node_ComponentBoundEvent_10_ToggleHovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__btn_southpaw_K2Node_ComponentBoundEvent_11_ToggleHovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__btn_deadzone_K2Node_ComponentBoundEvent_12_SettingsSliderHovered__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton);
+    void BndEvt__btn_switchSticks_K2Node_ComponentBoundEvent_13_ToggleUnhovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__btn_southpaw_K2Node_ComponentBoundEvent_14_ToggleUnhovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__btn_deadzone_K2Node_ComponentBoundEvent_15_SettingsSliderUnhovered__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton);
+    void BndEvt__btn_cursorSensitivity_K2Node_ComponentBoundEvent_18_SettingsSliderHovered__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton);
+    void BndEvt__btn_cursorSensitivity_K2Node_ComponentBoundEvent_23_SettingsSliderUnhovered__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton);
+    void BndEvt__btn_AudioVisualizer_K2Node_ComponentBoundEvent_24_SettingsCheckmarkPressed__DelegateSignature(bool IsChecked, UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__drp_FontSize_K2Node_ComponentBoundEvent_26_DropDownOptionChanged__DelegateSignature(int32_t NewOptionIndex, UUI_BP_SettingsDropDownButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_AudioVisualizer_K2Node_ComponentBoundEvent_27_ToggleHovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_AudioVisualizer_K2Node_ComponentBoundEvent_28_ToggleUnhovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_drp_FontSize_K2Node_ComponentBoundEvent_29_DropdownHovered__DelegateSignature(UUI_BP_SettingsDropDownButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_drp_FontSize_K2Node_ComponentBoundEvent_30_DropdownUnhovered__DelegateSignature();
+    void BndEvt__UI_BP_Settings_Accessibility_drp_FontSize_K2Node_ComponentBoundEvent_33_DropdownOpened__DelegateSignature();
+    void BndEvt__UI_BP_Settings_Accessibility_btn_PathLine_K2Node_ComponentBoundEvent_36_SettingsCheckmarkPressed__DelegateSignature(bool IsChecked, UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_PathLine_K2Node_ComponentBoundEvent_35_ToggleHovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_PathLine_K2Node_ComponentBoundEvent_37_ToggleUnhovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MiniMapOpacity_K2Node_ComponentBoundEvent_41_SettingsSliderHovered__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MiniMapOpacity_K2Node_ComponentBoundEvent_42_SettingsSliderUnhovered__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton);
+    void Destruct();
+    void BndEvt__UI_BP_Settings_Accessibility_btn_TextHighContrast_K2Node_ComponentBoundEvent_44_SettingsCheckmarkPressed__DelegateSignature(bool IsChecked, UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_TextHighContrast_K2Node_ComponentBoundEvent_45_ToggleHovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_TextHighContrast_K2Node_ComponentBoundEvent_46_ToggleUnhovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_GameHighContrast_K2Node_ComponentBoundEvent_47_SettingsCheckmarkPressed__DelegateSignature(bool IsChecked, UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_GameHighContrast_K2Node_ComponentBoundEvent_48_ToggleHovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_GameHighContrast_K2Node_ComponentBoundEvent_49_ToggleUnhovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_AudioCueOpacity_K2Node_ComponentBoundEvent_25_SettingsSliderHovered__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_AudioCueScale_K2Node_ComponentBoundEvent_32_SettingsSliderHovered__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_AudioCueOpacity_K2Node_ComponentBoundEvent_50_SettingsSliderUnhovered__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_AudioCueScale_K2Node_ComponentBoundEvent_51_SettingsSliderUnhovered__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_cameraShake_K2Node_ComponentBoundEvent_31_SettingsSliderFinished__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float EndValue);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_cursorSensitivity_K2Node_ComponentBoundEvent_34_SettingsSliderFinished__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float EndValue);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_deadzone_K2Node_ComponentBoundEvent_43_SettingsSliderFinished__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float EndValue);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MiniMapOpacity_K2Node_ComponentBoundEvent_52_SettingsSliderFinished__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float EndValue);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_AudioCueOpacity_K2Node_ComponentBoundEvent_53_SettingsSliderFinished__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float EndValue);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_AudioCueScale_K2Node_ComponentBoundEvent_55_SettingsSliderFinished__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float EndValue);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_cameraShake_K2Node_ComponentBoundEvent_2_SettingsSliderChanged__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float NewValue);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_deadzone_K2Node_ComponentBoundEvent_21_SettingsSliderChanged__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float NewValue);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_cursorSensitivity_K2Node_ComponentBoundEvent_22_SettingsSliderChanged__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float NewValue);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MiniMapOpacity_K2Node_ComponentBoundEvent_54_SettingsSliderChanged__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float NewValue);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_AudioCueOpacity_K2Node_ComponentBoundEvent_56_SettingsSliderChanged__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float NewValue);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_AudioCueScale_K2Node_ComponentBoundEvent_57_SettingsSliderChanged__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float NewValue);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_colorOptions_K2Node_ComponentBoundEvent_58_DropDownOptionHovered__DelegateSignature(UUI_BP_SettingsDropDownButton_C* Button, FString HoveredItemString);
+    void BndEvt__UI_BP_Settings_Accessibility_drp_FontSize_K2Node_ComponentBoundEvent_60_DropDownOptionHovered__DelegateSignature(UUI_BP_SettingsDropDownButton_C* Button, FString HoveredItemString);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_AudioCueLegend_K2Node_ComponentBoundEvent_61_MenuTextButtonHovered__DelegateSignature(UUI_BP_MenuTextButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_AudioCueLegend_K2Node_ComponentBoundEvent_63_MenuTextButtonClicked__DelegateSignature(UUI_BP_MenuTextButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_AudioCueLegend_K2Node_ComponentBoundEvent_62_MenuTextButtonUnhovered__DelegateSignature(UUI_BP_MenuTextButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MenuReader_K2Node_ComponentBoundEvent_61_ToggleHovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MenuReader_K2Node_ComponentBoundEvent_64_ToggleUnhovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MenuReader_K2Node_ComponentBoundEvent_66_SettingsCheckmarkPressed__DelegateSignature(bool IsChecked, UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MenuReaderVoice_K2Node_ComponentBoundEvent_67_DropdownHovered__DelegateSignature(UUI_BP_SettingsDropDownButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MenuReaderVoice_K2Node_ComponentBoundEvent_68_DropdownUnhovered__DelegateSignature();
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MenuReaderVoice_K2Node_ComponentBoundEvent_69_DropDownOptionChanged__DelegateSignature(int32_t NewOptionIndex, UUI_BP_SettingsDropDownButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MenuReaderVoice_K2Node_ComponentBoundEvent_70_DropDownOptionHovered__DelegateSignature(UUI_BP_SettingsDropDownButton_C* Button, FString HoveredItemString);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MenuReaderVolume_K2Node_ComponentBoundEvent_71_SettingsSliderHovered__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MenuReaderVolume_K2Node_ComponentBoundEvent_72_SettingsSliderUnhovered__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MenuReaderVolume_K2Node_ComponentBoundEvent_73_SettingsSliderChanged__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float NewValue);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MenuReaderVolume_K2Node_ComponentBoundEvent_74_SettingsSliderFinished__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float EndValue);
+    void OnLegendItemHoldEnd0(ULegendItem* LegendItem, bool HoldWasCompleted);
+    void BndEvt__UI_BP_Settings_Accessibility_AudioCueHelpPage_K2Node_ComponentBoundEvent_75_OnVisibilityChangedEvent__DelegateSignature(ESlateVisibility InVisibility);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_MenuReaderVoice_K2Node_ComponentBoundEvent_76_DropdownOpened__DelegateSignature();
+    void BndEvt__UI_BP_Settings_Accessibility_btn_colorOptions_K2Node_ComponentBoundEvent_77_DropdownOpened__DelegateSignature();
+    void BndEvt__UI_BP_Settings_Accessibility_btn_spellCastMode_K2Node_ComponentBoundEvent_79_SettingsCheckmarkPressed__DelegateSignature(bool IsChecked, UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_spellCastMode_K2Node_ComponentBoundEvent_81_ToggleUnhovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_spellCastMode_K2Node_ComponentBoundEvent_80_ToggleHovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void ResetAccessibilitySettings();
+    void BndEvt__UI_BP_Settings_Accessibility_btn_Arachnophobia_K2Node_ComponentBoundEvent_38_SettingsCheckmarkPressed__DelegateSignature(bool IsChecked, UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_Arachnophobia_K2Node_ComponentBoundEvent_39_ToggleHovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void BndEvt__UI_BP_Settings_Accessibility_btn_Arachnophobia_K2Node_ComponentBoundEvent_40_ToggleUnhovered__DelegateSignature(UUI_BP_SettingsCheckboxButton_C* Button);
+    void ExecuteUbergraph_UI_BP_Settings_Accessibility(int32_t EntryPoint, UUI_BP_SettingsCheckboxButton_C* K2Node_ComponentBoundEvent_Button, UPhoenixGameSettings* CallFunc_GetPhoenixGameSettings_ReturnValue, UPhoenixGameSettings* CallFunc_GetPhoenixGameSettings_ReturnValue_1, UUI_BP_SettingsCheckboxButton_C* K2Node_ComponentBoundEvent_Button_17, UUI_BP_SettingsCheckboxButton_C* K2Node_ComponentBoundEvent_Button_18, UUI_BP_SettingsSliderButton_C* K2Node_ComponentBoundEvent_SliderButton_19, UUI_BP_SettingsSliderButton_C* K2Node_ComponentBoundEvent_SliderButton_18, UUI_BP_SettingsSliderButton_C* K2Node_ComponentBoundEvent_SliderButton_17, UUI_BP_SettingsSliderButton_C* K2Node_ComponentBoundEvent_SliderButton_16, UPhoenixGameSettings* CallFunc_GetPhoenixGameSettings_ReturnValue_2, UPhoenixGameSettings* CallFunc_GetPhoenixGameSettings_ReturnValue_3, UUI_BP_SettingsSliderButton_C* K2Node_ComponentBoundEvent_SliderButton_15, float K2Node_ComponentBoundEvent_EndValue_6, UUI_BP_SettingsSliderButton_C* K2Node_ComponentBoundEvent_SliderButton_14, float K2Node_ComponentBoundEvent_EndValue_5);
+    void OnMenuReaderSettingToggled__DelegateSignature();
+    void CursorSensitivityChanged__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float NewValue);
+    void CameraDeadzoneChanged__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float NewValue);
+    void ToggleSouthpawControls__DelegateSignature(bool IsChecked);
+    void ToggleSwitchInputSticks__DelegateSignature(bool IsChecked);
+    void ToggleTrackCurrentTarget__DelegateSignature(bool IsChecked);
+    void ToggleAimMode__DelegateSignature(bool IsChecked);
+    void ColorOptionsChanged__DelegateSignature(int32_t SelectionIndex);
+    void ToggleCinematicCameraShake__DelegateSignature(bool IsChecked);
+    void CameraShakeChanged__DelegateSignature(UUI_BP_SettingsSliderButton_C* SliderButton, float NewValue);
+}; // Size: 0x5c0
+#pragma pack(pop)
